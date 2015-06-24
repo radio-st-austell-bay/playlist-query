@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <title>RSAB: The Radar</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.js"></script>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="Autolinker.min.js"></script>
+    <script type="text/javascript" src="playlist-query.js"></script>
+    <script type="text/javascript">
+        google.load('visualization', '1')
+    </script>
+    <script type="text/javascript">
+      $(function () {
+        $('#radar-playlist').rsabplaylist();
+      })
+    </script>
+    <link rel="stylesheet" href="playlist.css">
+
+    <div id="radar-playlist" class="rsabplaylist">
+      <div class="nav">
+        <span class="nav-group nav-group-basic">
+          <button class="nav-first">|&lt;</button>
+          <button class="nav-previous">&lt;</button>
+          <button class="nav-next">&gt;</button>
+          <button class="nav-last">&gt;|</button>
+        </span>
+        <span class="nav-group nav-group-random">
+          <button class="nav-random">Random</button>
+        </span>
+        <span class="nav-group nav-group-date">
+          <select class="nav-year" name="year"></select>
+          <select class="nav-date" name="date"></select>
+          <span style="display: none;" class="nav-month-names">
+            <span class="nav-month-0">January</span>
+            <span class="nav-month-1">February</span>
+            <span class="nav-month-2">March</span>
+            <span class="nav-month-3">April</span>
+            <span class="nav-month-4">May</span>
+            <span class="nav-month-5">June</span>
+            <span class="nav-month-6">July</span>
+            <span class="nav-month-7">August</span>
+            <span class="nav-month-8">September</span>
+            <span class="nav-month-9">October</span>
+            <span class="nav-month-10">November</span>
+            <span class="nav-month-11">December</span>
+          </span>
+        </span>
+      </div>
+      <div class="loading" style="display: none;">Loading...</div>
+      <div class="spreadsheet-key" style="display: none;">0AqC0m-aZYwaEdDNFUmpGMmlzX0VWeGNaUU1hTUlZNWc</div>
+      <!-- <div class="spreadsheet-key" style="display: none;">0AqC0m-aZYwaEdF9oNE9odS1oVUYtSW04VGNId0I0N0E</div> -->
+      <div class="various-artists" style="display: none;">Various Artists</div>
+      <div class="main-content"></div>
+      <div class="list-template" style="display: none;">
+          <h3 class="heading">Radar episode #<span class="show-number"></span><span class="show-title">: <span class="content"></span></span></h3>
+          <p class="header-info">This is the playlist for show number <span class="show-number"></span>, broadcast on <span class="date"></span>.</p>
+          <span class="show-note">
+            <p class="content"></p>
+          </span>
+          <ol class="list-content"/></ol>
+          <span class="aotw">
+              <p><span class="is_aotw">*</span>Album of the week: <span class="artist"><span class="content"></span> - </span><span class="album"></span></p>
+          </span>
+      </div>
+      <ul style="display: none;">
+        <li class="track track-template">
+          <span class="is_aotw">*</span>
+          <span class="artist"></span> - <span class="title"></span><span class="version"> (<span class="content"></span>)</span>
+          <span class="album"> [<span class="content"></span>]</span>
+          <span class="note"><ul><li><span class="content"></span></li></ul></span>
+        </li>
+      </ul>
+      <div class="show-picker-template" style="display: none;"><span class="month-name"></span> <span class="day"></span><span class="day-suffix"></span>:<span class="show-number"> #<span class="content"></span></span><span class="title"> - <span class="content"></span></span></div>
+    </div>
+
+  </body>
+</html>

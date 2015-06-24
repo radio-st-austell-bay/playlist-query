@@ -1,0 +1,58 @@
+.rsabplaylist {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+.rsabplaylist .nav .nav-group button {
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.rsabplaylist .nav .nav-group {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.rsabplaylist .nav .nav-group-date {
+    display: block;
+}
+
+.rsabplaylist .is_aotw {
+    font-weight: bold;
+    color: red;
+}
+
+.rsabplaylist .header-info .date {
+    font-weight: bold;
+}
+
+.rsabplaylist .header-info .show-number {
+    font-weight: bold;
+}
+
+.rsabplaylist .track .artist {
+    font-weight: bold;
+}
+
+.rsabplaylist .track .album {
+    font-style: italic;
+}
+
+.rsabplaylist .track .note {
+    color: grey;
+}
+
+.rsabplaylist .aotw .artist {
+    font-weight: bold;
+}
+
+.rsabplaylist .aotw .album {
+    font-style: italic;
+}
+
+.rsabplaylist .loading {
+    color: grey;
+    font-style: italic;
+}
