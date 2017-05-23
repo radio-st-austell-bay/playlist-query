@@ -19,6 +19,8 @@
             self.track_template = $('.track-template', self.element).hide().removeClass('track-template')
             self.show_picker_template = $('.show-picker-template', self.element).hide().removeClass('show-picker-template')
             self.base_url = 'https://spreadsheets.google.com/spreadsheet/tq?key=' + encodeURIComponent(self.spreadsheet_key)
+            self.spotify_embed_base = 'https://open.spotify.com/embed/user/theradarrsab/playlist/';
+            self.spotify_link_base = 'https://open.spotify.com/user/theradarrsab/playlist/';
             self.various_artists_name = $.trim($('.various-artists', self.element).hide().text())
             self.params = null
             self.latest_show_metadata = null
@@ -202,7 +204,8 @@
                 'number': 1,
                 'date': 2,
                 'title': 3,
-                'note': 4
+                'note': 4,
+                'spotify': 6
             }
             var ordered_row_indexes = data.getSortedRows(2); // date
             var index = 0;
@@ -382,6 +385,19 @@
                     this.current_show_details.aotw_artist ? this.current_show_details.aotw_artist : this.various_artists_name
                 )
                 this._render_text(rendered_list.find('.aotw .album'), this.current_show_details.aotw_album)
+            }
+            if(this.current_show_metadata.spotify === '') {
+                rendered_list.find('.spotify').hide();
+            }
+            else {
+                rendered_list.find('.spotify').show()
+                    .children('iframe')
+                    .attr(
+                        'src',
+                        (this.current_show_metadata.spotify === '')
+                        ? ''
+                        : this.spotify_embed_base + this.current_show_metadata.spotify
+                    );
             }
             this._render_text(rendered_list.find('.show-title'), this.current_show_metadata.title)
             this._render_text(rendered_list.find('.show-note'), this.current_show_metadata.note, true)
